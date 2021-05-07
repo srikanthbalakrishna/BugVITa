@@ -2,7 +2,7 @@
 
 ## a badly written guide by srikanth :)
 
-### `npm install` after cloning
+### `npm install` and `npm run client-install` after cloning
 
 ### `npm run server` to run the Express server
 
@@ -61,9 +61,9 @@
   **URL**<br>
   `http://localhost:4000/api/bugs`<br>
   **request body**
-  ` { "name":"Bug42 Mozilla error", "author":"Jesus", "product":"sampleBugs", "description":"Chrome crashes when i ask it to download a burger" } `
+  `{ "name":"Bug42 Mozilla error", "author":"Jesus", "product":"sampleBugs", "description":"Chrome crashes when i ask it to download a burger" }`
   **response body**
-  ` { "product": "sampleBugs", "description": "Chrome crashes when i ask it to download a burger", "_id": "608e18829950463dd404ca27", "name": "Bug42 Mozilla error", "author": "Jesus", "date": "2021-05-02T03:12:02.547Z", "__v": 0 } `
+  `{ "product": "sampleBugs", "description": "Chrome crashes when i ask it to download a burger", "_id": "608e18829950463dd404ca27", "name": "Bug42 Mozilla error", "author": "Jesus", "date": "2021-05-02T03:12:02.547Z", "__v": 0 }`
 - @route PUT api/bugs/:id<br>
   @desc Update a bug by REPLACING it<br>
   **URL**<br>
@@ -192,10 +192,13 @@
   **URL**<br>
   ` `<br>
   **request body**
+
   ```
 
   ```
+
   **response body**
+
   ```
 
   ```
