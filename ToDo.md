@@ -1,0 +1,3 @@
+- add sample/random data to database for development process
+- create route to add a new product
+- create route to update user
