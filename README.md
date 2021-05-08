@@ -4,9 +4,9 @@
 
 ### `npm install` and `npm run client-install` after cloning
 
-### _`npm run server`_ to run the Express server
+### `npm run server` to run the Express server
 
-### `npm run dev` to open the application
+### _`npm run dev`_ to open the application
 
 #### Server runs on http://localhost:4000
 

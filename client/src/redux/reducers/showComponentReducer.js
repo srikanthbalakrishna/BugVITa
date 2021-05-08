@@ -6,6 +6,8 @@ const showComponentReducer = (state = initialState, action) => {
       return "SHOW_BUGSLIST";
     case "SHOW_PRODUCTS":
       return "SHOW_PRODUCTS";
+    case "SHOW_LOGIN":
+      return "SHOW_LOGIN";
     default:
       return state;
   }
