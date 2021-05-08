@@ -4,9 +4,13 @@
 
 ### `npm install` and `npm run client-install` after cloning
 
-### `npm run server` to run the Express server
+### _`npm run server`_ to run the Express server
+
+### `npm run dev` to open the application
 
 #### Server runs on http://localhost:4000
+
+#### Client runs on http://localhost:3000
 
 ### _Examples_ for Routes
 

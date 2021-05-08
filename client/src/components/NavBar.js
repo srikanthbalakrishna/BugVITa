@@ -7,8 +7,8 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <h1>BugVITa</h1>
-      <button onClick={() => dispatch(showBugsList())}>Products</button>
-      <button onClick={() => dispatch(showProducts())}>Bugs</button>
+      <button onClick={() => dispatch(showProducts())}>Products</button>
+      <button onClick={() => dispatch(showBugsList())}>Bugs</button>
     </div>
   );
 };
