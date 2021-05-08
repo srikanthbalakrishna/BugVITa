@@ -144,10 +144,10 @@
   "success": true
   }
   ```
-- @route GET api/product/:product<br>
+- @route GET api/products/:product<br>
   @desc Get all bugs belonging to specified product<br>
   **URL**<br>
-  `http://localhost:4000/api/bugs/608e1d499950463dd404ca28`<br>
+  `http://localhost:4000/api/products/sampleBugs`<br>
   **response body**
   ```
   [
