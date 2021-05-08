@@ -10,6 +10,52 @@
 
 ### _Examples_ for Routes
 
+- @route GET api/products <br>
+  @desc get ALL products<br>
+  **URL**<br>
+  `http://localhost:4000/api/products`<br>
+  **response body**
+
+  ```
+  [
+    {
+        "_id": "6095d5c75f46d007d08cd5a6",
+        "name": "sampleBugs",
+        "__v": 0
+    },
+    {
+        "_id": "6095d5cd5f46d007d08cd5a7",
+        "name": "BugVITa",
+        "__v": 0
+    },
+    {
+        "_id": "6095d6025f46d007d08cd5a8",
+        "name": "Apple",
+        "__v": 0
+    }
+  ]
+  ```
+
+- @route POST api/products<br>
+  @desc add a new product<br>
+  **URL**<br>
+  `http://localhost:4000/api/products`<br>
+  **request body**
+
+  ```
+  {
+    "name":"BugVITa"
+  }
+  ```
+
+  **response body**
+
+  ```
+  {
+    "wasCreated": true
+  }
+  ```
+
 - @route GET api/bugs <br>
   @desc _GET_ all bugs from database:<br>
   **URL**<br>
@@ -61,9 +107,13 @@
   **URL**<br>
   `http://localhost:4000/api/bugs`<br>
   **request body**
-  `{ "name":"Bug42 Mozilla error", "author":"Jesus", "product":"sampleBugs", "description":"Chrome crashes when i ask it to download a burger" }`
+  ```
+  { "name":"Bug42 Mozilla error", "author":"Jesus", "product":"sampleBugs", "description":"Chrome crashes when i ask it to download a burger" }
+  ```
   **response body**
-  `{ "product": "sampleBugs", "description": "Chrome crashes when i ask it to download a burger", "_id": "608e18829950463dd404ca27", "name": "Bug42 Mozilla error", "author": "Jesus", "date": "2021-05-02T03:12:02.547Z", "__v": 0 }`
+  ```
+  { "product": "sampleBugs", "description": "Chrome crashes when i ask it to download a burger", "_id": "608e18829950463dd404ca27", "name": "Bug42 Mozilla error", "author": "Jesus", "date": "2021-05-02T03:12:02.547Z", "__v": 0 }
+  ```
 - @route PUT api/bugs/:id<br>
   @desc Update a bug by REPLACING it<br>
   **URL**<br>
