@@ -1,8 +1,10 @@
 import "../styles/NavBar.css";
 import { useDispatch } from "react-redux";
 //actions
-import showBugsList from "../redux/actions/showBugsList";
-import showProductsList from "../redux/actions/showProductsList";
+import {
+  showBugsList,
+  showProductsList,
+} from "../redux/ducks/showComponentDuck";
 
 const NavBar = () => {
   const dispatch = useDispatch();

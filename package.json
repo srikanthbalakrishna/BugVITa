@@ -16,7 +16,10 @@
     "body-parser": "^1.19.0",
     "concurrently": "^6.0.2",
     "express": "^4.17.1",
-    "mongoose": "^5.12.7"
+    "mongoose": "^5.12.7",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

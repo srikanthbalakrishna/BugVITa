@@ -1,4 +1,4 @@
-import showComponentReducer from "./showComponentReducer";
+import showComponentReducer from "./showComponentDuck";
 import { combineReducers } from "redux";
 /**
  * This creates a 'root' reducer that combines all our reducers into
