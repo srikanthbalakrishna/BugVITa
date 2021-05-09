@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {showComponent === "SHOW_PRODUCTS" && <Products />}
+      {showComponent === "SHOW_PRODUCTSLIST" && <Products />}
       {showComponent === "SHOW_BUGSLIST" && <BugsList />}
     </div>
   );

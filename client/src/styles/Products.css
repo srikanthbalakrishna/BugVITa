@@ -1,3 +1,11 @@
-* {
-  padding: 1rem;
+.products-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.products-list button {
+  background-color: black;
+  color: white;
+  width: 10rem;
+  margin: 0.25rem;
 }
