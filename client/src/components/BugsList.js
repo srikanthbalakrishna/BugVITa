@@ -1,13 +1,29 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchBugs } from "../redux/ducks/bugsDuck";
 const BugsList = () => {
+  //Whichever product is the one currently selected
+  const selectedProduct = useSelector((state) => state.selectedProduct);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBugs(selectedProduct));
+    // eslint-disable-next-line
+  }, []);
+  const bugsOfAProductState = useSelector((state) => state.bugsByProduct);
+  //
   return (
     <div>
-      {/*For now, let it be a hardcoded list,just to give us an idea */}
-      <h2>Bugs List:</h2>
-      <li>Bug 1</li>
-      <li>Bug 2</li>
-      <li>Bug 3</li>
-      <li>Bug 4</li>
-      <li>Bug 5</li>
+      {bugsOfAProductState.loading === true && <h2>LOADING BUGS......</h2>}
+
+      {bugsOfAProductState.loading === false && (
+        <>
+          <h2>{`${selectedProduct} Bugs:`}</h2>
+          {bugsOfAProductState.bugs.map((bug) => (
+            <p key={bug._id}>{`${bug.name} -- ${bug.author} `}</p>
+          ))}
+        </>
+      )}
     </div>
   );
 };
