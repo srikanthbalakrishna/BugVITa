@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import NavBar from "./components/NavBar";
-import Products from "./components/Products";
+import ProductsList from "./components/ProductsList";
 import BugsList from "./components/BugsList";
 import { useSelector } from "react-redux";
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      {showComponent === "SHOW_PRODUCTSLIST" && <Products />}
+      {showComponent === "SHOW_PRODUCTSLIST" && <ProductsList />}
       {showComponent === "SHOW_BUGSLIST" && <BugsList />}
     </div>
   );

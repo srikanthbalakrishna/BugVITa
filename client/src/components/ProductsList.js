@@ -13,17 +13,22 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
-  const productsList = useSelector((state) => state.products.products);
-  console.log(productsList);
+  const productsState = useSelector((state) => state.products);
+  console.log(productsState.loading);
+
   //
   return (
     <div className="products-list">
-      {/*For now, let it be a hardcoded list,just to give us an idea */}
+      {productsState.loading === true && <h2>LOADING........</h2>}
 
-      <h2>Products:</h2>
-      {productsList.map((product) => (
-        <p key={product._id}> {product.name}</p>
-      ))}
+      {productsState.loading === false &&
+      (
+        <div className="products">
+          <h2>Products:</h2>
+          {   productsState.products.map( product  => <p key={product._id}> {product.name}</p> )   }
+        </div>
+      )
+      }
     </div>
   );
 };
