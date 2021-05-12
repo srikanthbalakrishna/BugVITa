@@ -1,23 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose"); //ORM to interact with MongoDB, can also use the Driver but this is easier
 const bodyParser = require("body-parser");
-
+const path = require("path");
 const app = express();
-
-//DEPRECATED - USE REACT FRONTEND
-/*
-app.get("/", (req, res) => {
-  res.set({ "Allow-access-Allow-Origin": "*" });
-  return res.redirect("index.html"); //entry point html file
-});
-*/
 
 // bodyparser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-//static location
-//app.use(express.static("public"));
 
 //DB config
 const db = require("./configs/keys").mongoURI;
@@ -40,6 +29,16 @@ app.use("/api/users", users);
 //products route
 const bugs_by_product = require("./routes/api/products");
 app.use("/api/products", bugs_by_product);
+
+// Server static assets if in production
+if (process.env.NODE_ENV === "production") {
+  //set a static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 4000; //if environment variable found,use it, else use 4000
 
