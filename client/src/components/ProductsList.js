@@ -15,6 +15,7 @@ const Products = () => {
     dispatch(fetchProducts());
     // eslint-disable-next-line
   }, []);
+
   const productsState = useSelector((state) => state.products);
   //
   const productClickHandler = (event) => {
@@ -28,11 +29,15 @@ const Products = () => {
 
       {productsState.loading === false && (
         <div className="products">
-          <h2>Products:</h2>
+          <h2 className="ProductHeading">Products:</h2>
           {productsState.products.map((product) => (
-            <p key={product._id} onClick={productClickHandler}>
+            <button
+              className="IndivisualProds"
+              key={product._id}
+              onClick={productClickHandler}
+            >
               {product.name}
-            </p>
+            </button>
           ))}
         </div>
       )}

@@ -14,6 +14,16 @@ export const showProductsList = () => {
     type: "SHOW_PRODUCTSLIST",
   };
 };
+export const showBugAdd = () => {
+  return {
+    type: "SHOW_BUGADD",
+  };
+};
+export const showBugAddedScreen = () => {
+  return {
+    type: "SHOW_Bug_Added_Screen",
+  };
+};
 
 //REDUCERS:
 const initialState = "SHOW_LOGIN";
@@ -26,6 +36,10 @@ const showComponentReducer = (state = initialState, action) => {
       return "SHOW_PRODUCTSLIST";
     case "SHOW_LOGIN":
       return "SHOW_LOGIN";
+    case "SHOW_BUGADD":
+      return "SHOW_BUGADD";
+    case "SHOW_Bug_Added_Screen":
+      return "SHOW_Bug_Added_Screen";
     default:
       return state;
   }

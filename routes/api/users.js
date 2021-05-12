@@ -22,12 +22,14 @@ router.post("/signup", (req, res) => {
   console.log("Signup successful!");
 }); //create a user POST ends
 
-// @route GET api/users/login
+// @route GET api/users/login/:email-:password
+// Example Request URL: api/users/login/admin@gmail.com-admin123
+// req.params: { "email": "admin@gmail.com", "password": "admin123" }
 // @desc check if user exists in database.
 // @access Public
-router.get("/login", (req, res) => {
+router.get("/login/:email-:password", (req, res) => {
   User.findOne(
-    { email: req.body.email, password: req.body.password },
+    { email: req.params.email, password: req.params.password },
     (err, user) => {
       if (err) {
         console.log(err);
