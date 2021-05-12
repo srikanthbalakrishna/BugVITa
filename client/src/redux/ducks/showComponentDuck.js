@@ -16,7 +16,7 @@ export const showProductsList = () => {
 };
 
 //REDUCERS:
-const initialState = "SHOW_PRODUCTSLIST";
+const initialState = "SHOW_LOGIN";
 
 const showComponentReducer = (state = initialState, action) => {
   switch (action.type) {
