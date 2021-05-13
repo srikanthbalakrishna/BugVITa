@@ -6,6 +6,7 @@ import BugAddForm from "./components/BugAddForm";
 import BugAddedNotification from "./components/BugAddedNotification";
 import { useSelector } from "react-redux";
 import Login from "./components/Login";
+import BugReport from "./components/BugReport";
 
 function App() {
   //A component wil render(or not) based on the state 'showComponent'
@@ -20,6 +21,7 @@ function App() {
         {showComponent === "SHOW_BUGSLIST" && <BugsList />}
         {showComponent === "SHOW_BUGADD" && <BugAddForm />}
         {showComponent === "SHOW_Bug_Added_Screen" && <BugAddedNotification />}
+        {showComponent === "SHOW_BUGREPORT" && <BugReport />}
       </div>
     </div>
   );

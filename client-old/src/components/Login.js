@@ -2,10 +2,12 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { showProductsList } from "../redux/ducks/showComponentDuck";
 import axios from "axios";
+import { setUserEmail } from "../redux/ducks/userDuck";
+
 const Login = () => {
   const dispatch = useDispatch();
-
   /* Local states which do not need redux as they are used only in this component*/
+  const [showLoading, setShowLoading] = useState(false);
   const [showValidityMessage, setShowValidityMessage] = useState(false);
   const [validityMessage, setValidityMessage] = useState("");
 
@@ -23,10 +25,12 @@ const Login = () => {
       setShowValidityMessage(true);
       setTimeout(() => setShowValidityMessage(false), 2500);
     } else {
-      console.log("form submitted!");
+      setShowLoading(true);
       axios
         .get(`/api/users/login/${email_ID}-${password_entered}`)
         .then((res) => {
+          setShowLoading(false);
+          setUserEmail(email_ID);
           if (res.data.loggedin) {
             dispatch(showProductsList());
           } else {
@@ -35,8 +39,8 @@ const Login = () => {
             setTimeout(() => setShowValidityMessage(false), 2500);
           }
         });
-    }
-  };
+    } //else ends
+  }; //handleSubmit() ends
 
   return (
     <div className="form-container">
@@ -58,9 +62,14 @@ const Login = () => {
           placeholder="Password"
           name="password"
         />
-        <button className="form-field" type="submit">
-          Login
-        </button>
+
+        {showLoading ? (
+          <h2>LOADING....</h2>
+        ) : (
+          <button className="form-field" type="submit">
+            Login
+          </button>
+        )}
       </form>
     </div>
   );

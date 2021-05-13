@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBugs } from "../redux/ducks/bugsDuck";
-import { showBugAdd } from "../redux/ducks/showComponentDuck";
+import { setSelectedBug } from "../redux/ducks/selectedBugDuck";
+import { showBugAdd, showBugReport } from "../redux/ducks/showComponentDuck";
+
 const BugsList = () => {
   //Whichever product is the one currently selected
   const selectedProduct = useSelector((state) => state.selectedProduct);
@@ -21,6 +23,11 @@ const BugsList = () => {
   const bugsOfAProductState = useSelector((state) => state.bugsByProduct);
   const newBugBeingPosted = useSelector((state) => state.bugAdd.loading);
 
+  const showReport = (bugID) => {
+    dispatch(setSelectedBug(bugID));
+    dispatch(showBugReport());
+  };
+
   //
   return (
     <div>
@@ -32,10 +39,13 @@ const BugsList = () => {
           <>
             <h2>{`${selectedProduct} Bugs:`}</h2>
             {bugsOfAProductState.bugs.map((bug) => (
-              <p
-                className="IndivisualBug"
+              <button
+                className="IndividualBug"
                 key={bug._id}
-              >{`${bug.name} -- ${bug.author} `}</p>
+                onClick={() => showReport(bug._id)}
+              >
+                {`${bug.name}`}
+              </button>
             ))}
           </>
         )}

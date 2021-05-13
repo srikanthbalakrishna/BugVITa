@@ -24,7 +24,11 @@ export const showBugAddedScreen = () => {
     type: "SHOW_Bug_Added_Screen",
   };
 };
-
+export const showBugReport = () => {
+  return {
+    type: "SHOW_BUGREPORT",
+  };
+};
 //REDUCERS:
 const initialState = "SHOW_LOGIN";
 
@@ -40,6 +44,8 @@ const showComponentReducer = (state = initialState, action) => {
       return "SHOW_BUGADD";
     case "SHOW_Bug_Added_Screen":
       return "SHOW_Bug_Added_Screen";
+    case "SHOW_BUGREPORT":
+      return "SHOW_BUGREPORT";
     default:
       return state;
   }
