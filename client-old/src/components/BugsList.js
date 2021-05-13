@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchBugs } from "../redux/ducks/bugsDuck";
 import { setSelectedBug } from "../redux/ducks/selectedBugDuck";
 import { showBugAdd, showBugReport } from "../redux/ducks/showComponentDuck";
+import "../styles/BugsList.css";
 
 const BugsList = () => {
   //Whichever product is the one currently selected
