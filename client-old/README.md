@@ -1,5 +1,3 @@
-# Getting Started with Create React App
-
 # This was my first ever project using React
 
 - In order to display different "pages", i used the concept of Conditional
