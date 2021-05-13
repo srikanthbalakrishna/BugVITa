@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "old-client": "npm start --prefix client-old",
     "dev-old-client": "concurrently \"npm run server\" \"npm run old-client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client-old && npm run build --prefix client-old"
   },
   "author": "srikanth",
   "license": "ISC",
