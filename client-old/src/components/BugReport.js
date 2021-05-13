@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import { setSelectedBug } from "../redux/ducks/selectedBugDuck";
 import { useEffect, useState } from "react";
 import { showBugsList } from "../redux/ducks/showComponentDuck";
 

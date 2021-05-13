@@ -1,5 +1,17 @@
 # Getting Started with Create React App
 
+# This was my first ever project using React
+
+- In order to display different "pages", i used the concept of Conditional
+  rendering. (At the time of writing the code, i wasn't aware of React-router-DOM)
+- I used Redux to manage some of my states because i thought it would be good practise
+  even though redux was probably not needed in a small app like this
+- I learnt about REQUEST-SUCCESS-FAILURE pattern for fetching data from API using Redux-Thunk middleware,
+  and have applied the same concept when i am interacting with the database in most of my components, even though it would have been easier to not do so,just so that i could get some practice and understand how things work!<br>
+  This was my first ever project using React and if you decide to look through the code and find something
+  that doesn't really make sense or could have been much more efficient, It's probably because i didn't know any better XD. <br>
+  Thanks for Reading!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
