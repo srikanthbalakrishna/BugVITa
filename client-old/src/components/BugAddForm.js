@@ -12,6 +12,7 @@ import {
 
 const BugAddForm = () => {
   const selectedProduct = useSelector((state) => state.selectedProduct);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   /* A local state which does not need redux as it is used only in this component*/
@@ -29,7 +30,7 @@ const BugAddForm = () => {
     } else {
       const bugObject = {
         name: bugName,
-        author: "TO_BE_SET_AUTOMATICALLY",
+        author: user,
         product: selectedProduct,
         description: bugDescription,
       };

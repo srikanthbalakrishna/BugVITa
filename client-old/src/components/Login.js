@@ -30,7 +30,8 @@ const Login = () => {
         .get(`/api/users/login/${email_ID}-${password_entered}`)
         .then((res) => {
           setShowLoading(false);
-          setUserEmail(email_ID);
+          dispatch(setUserEmail(email_ID));
+
           if (res.data.loggedin) {
             dispatch(showProductsList());
           } else {
