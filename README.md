@@ -211,17 +211,10 @@
   }
   ```
 
-- @route GET api/users/login<br>
+- @route GET api/users/login/${email_ID}-${password_entered}<br>
   @desc check if user exists in database.<br>
   **URL**<br>
-  `http://localhost:4000/api/users/login `<br>
-  **request body**
-  ```
-  {
-  "email":"srikanth@gmail.com",
-  "password": "srikanth123"
-  }
-  ```
+  `http://localhost:4000/api/users/login/srikanth@gmail.com-password `<br>
   **response body**(in case that user exists)
   ```
   {
