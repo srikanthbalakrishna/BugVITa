@@ -1,6 +1,6 @@
 # BugVITa api
 
-## a badly written guide by srikanth :)
+## GUIDE:
 
 ### `npm install` and `npm run client-install` after cloning
 
