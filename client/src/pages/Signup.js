@@ -27,7 +27,7 @@ function Signup(props) {
       function handleResponse(res){
           console.log(res)
           if(res.data.signedup)
-          window.location.href = "/";
+          window.location.href = "/dashboard";
         //   else
         //   window.location.href = "/";
       }
@@ -38,7 +38,7 @@ function Signup(props) {
 
              <section class="flex flex-col items-center h-screen md:flex-row ">
                     <div class="hidden w-full h-screen bg-white lg:block md:w-1/3 lg:w-2/3">
-                         <img src="https://dummyimage.com/1000x800/F3F4F7/64748b"
+                         <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
                             alt="" class="object-cover w-full h-full"/>
                     </div>
                     <div class="flex items-center justify-center w-full h-screen px-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
