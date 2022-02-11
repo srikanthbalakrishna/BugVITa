@@ -1,3 +1,4 @@
 module.exports = {
-  mongoURI: "mongodb://localhost:27017/bugvita",
+  mongoURI:
+    "mongodb+srv://admin:admin@srikanthmongocluster.tyxa1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
 };
