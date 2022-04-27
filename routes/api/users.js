@@ -18,7 +18,7 @@ router.post("/signup", (req, res) => {
     password: req.body.password,
   });
 
-  newUser.save().then((user) => res.json({ signedup: true, user }));
+  newUser.save().then((user) => res.json({ ...user, signedup: true }));
   console.log("Signup successful!");
 }); //create a user POST ends
 
@@ -39,10 +39,10 @@ router.get("/login/:email-:password", (req, res) => {
       if (!user) {
         //if no such user exists
         console.log("No such user exists");
-        return res.json({ loggedin: false, currentUser: req.body });
+        return res.json({ ...req.body, loggedin: false });
       }
       console.log("Login successful!");
-      return res.json({ loggedin: true, currentUser: user });
+      return res.json({ ...user, loggedin: true });
     }
   ); //findOne() ends
 }); //login user GET route ends
